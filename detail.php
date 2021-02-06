@@ -89,7 +89,6 @@
       <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
       <link rel="stylesheet" href="./assets/category.css" media="screen, print">
       <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">
-      <link rel="stylesheet" href="./assets/fonts" media="">
       <style>
          .as-filter-button-text {
          font-size: 26px;
@@ -130,7 +129,7 @@
                      <div class="pd-billboard pd-category-header">
                         <div class="pd-l-plate-scale">
                            <div class="pd-billboard-background">
-                              <img src="./assets/music-audio-alp-201709" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
+                              <img src="./assets/music-audio-alp-201709.jpg" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
                            </div>
                            <div class="pd-billboard-info">
                               <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce</h1>
@@ -163,7 +162,7 @@
                         <div class="width:60%">
                            <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
                               <div class="as-dummy-container as-dummy-img">
-                                 <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
+                                 <img src="./assets/wireless-headphones.jpg" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
                               </div>
                               <div class="images mini-gallery gal5 ">
                                  <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
@@ -193,12 +192,13 @@
                                  </h3>
                               </div>
                               <button type="submit" class="mercadopago-button" formmethod="post">
-                                <script
+                                 <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
+                                <!-- <script
                                     src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                     data-preference-id="<?php echo $preference->id; ?>"
                                     data-button-label="Pagar la compra"
                                     >
-                                </script>
+                                </script> -->
                               </button>
                            </div>
                            <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
