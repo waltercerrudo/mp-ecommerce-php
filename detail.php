@@ -55,13 +55,11 @@ $preference->payment_methods = array(
    "installments" => 6
 );
 
-// $preference->auto_return = "approved"; 
-
+$preference->auto_return = "approved"; 
 
 $preference->payer = $payer;
-
 $preference->notification_url = $base_url . "ipn.php";
-
+$preference->external_reference = "waltercerrudo@gmail.com";
 
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
@@ -70,7 +68,6 @@ $item->quantity = $_POST['unit'];
 $item->unit_price = $_POST['price'];
 $item->picture_url = str_replace("./", $base_url, $_POST['img']);
 $item->description = "Dispositivo móvil de Tienda e-commerce";
-$item->external_reference = "waltercerrudo@gmail.com";
 $preference->items = array($item);
 $preference->save();
 ?>
@@ -590,7 +587,7 @@ $preference->save();
                               </h3>
                            </div>
                            <button type="submit" class="mercadopago-button" formmethod="post">
-                              <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a>
+                              <!-- <a href="<?php echo $preference->init_point; ?>">Pagar con Mercado Pago</a> -->
                               <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra">
                               </script>
                            </button>
