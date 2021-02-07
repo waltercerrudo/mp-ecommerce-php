@@ -54,7 +54,7 @@
                      <div class="pd-billboard pd-category-header">
                         <div class="pd-l-plate-scale">
                            <div class="pd-billboard-background">
-                              <img src="./assets/music-audio-alp-201709" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
+                              <img src="./assets/music-audio-alp-201709.jpg" alt="" width="1440" height="320" data-scale-params-2="wid=2880&amp;hei=640&amp;fmt=jpeg&amp;qlt=95&amp;op_usm=0.5,0.5&amp;.v=1503948581306" class="pd-billboard-hero ir">
                            </div>
                            <div class="pd-billboard-info">
                               <h1 class="pd-billboard-header pd-util-compact-small-18">Tienda e-commerce</h1>
@@ -203,16 +203,16 @@
                             <h3>El pago ha sido registrado</h3>
                             <ul>
                             <li>
-                               <code>payment_type</code>
-                                 <?php echo $_GET["payment_type"]; ?>
+                               <code>payment_type</code>=>
+                                 <b><?php echo $_GET["payment_type"]; ?></b>
                                </li>
                                <li>
-                                 <code>collection_id</code>
-                                 <?php echo $_GET["collection_id"]; ?>
+                                 <code>collection_id</code>=>
+                                 <b><?php echo $_GET["collection_id"]; ?></b>
                                </li>
                                <li>
-                               <code>external_reference</code>
-                                 <?php echo $_GET["external_reference"]; ?>
+                               <code>external_reference</code>=>
+                                 <b><?php echo $_GET["external_reference"]; ?></b>
                                </li>                                                                
                             </ul>
                         </div>

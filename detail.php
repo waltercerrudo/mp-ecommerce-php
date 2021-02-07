@@ -1,7 +1,5 @@
 <?php
 
-
-
 $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 $s = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'];
 $file_name = basename(parse_url($s, PHP_URL_PATH));
@@ -16,7 +14,7 @@ $payer = new MercadoPago\Payer();
 $payer->name = "Lalo";
 $payer->surname = "Landa";
 $payer->email = "test_user_63274575@testuser.com";
-$payer->date_created = "2018-06-02T12:58:41.425-04:00";
+$payer->date_created = date(DATE_RFC3339_EXTENDED, time());
 $payer->phone = array(
    "area_code" => "11",
    "number" => "22223333"
@@ -64,10 +62,12 @@ $preference->external_reference = "waltercerrudo@gmail.com";
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
 $item->title = $_POST['title'];
+$item->description = "Dispositivo móvil de Tienda e-commerce";
+$item->picture_url = str_replace("./", $base_url, $_POST['img']);
 $item->quantity = $_POST['unit'];
 $item->unit_price = $_POST['price'];
-$item->picture_url = str_replace("./", $base_url, $_POST['img']);
-$item->description = "Dispositivo móvil de Tienda e-commerce";
+
+
 $preference->items = array($item);
 $preference->save();
 ?>
@@ -586,9 +586,10 @@ $preference->save();
                                  <?php echo "$" . $_POST['unit'] ?>
                               </h3>
                            </div>
-                           <button type="submit" class="mercadopago-button" formmethod="post">                              
-                              <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra">
-                              </script>
+                           <button type="submit" class="mercadopago-button" formmethod="post">  
+                           <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>                            
+                              <!-- <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php // echo $preference->id; ?>" data-button-label="Pagar la compra">
+                              </script> -->
                            </button>
                         </div>
                      </div>

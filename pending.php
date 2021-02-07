@@ -200,20 +200,20 @@
                         </div>
                         <div class="column small-12 as-search-results-tiles as-search-results-width">
                             <h3>El pago se encuentra pendiente</h3>
-                            <ul>
+                            <!-- <ul>
                             <li>
                                <code>payment_type</code>
-                                 <?php echo $_GET["payment_type"]; ?>
+                                 <?php // echo $_GET["payment_type"]; ?>
                                </li>
                                <li>
                                  <code>collection_id</code>
-                                 <?php echo $_GET["collection_id"]; ?>
+                                 <?php // echo $_GET["collection_id"]; ?>
                                </li>
                                <li>
                                <code>external_reference</code>
-                                 <?php echo $_GET["external_reference"]; ?>
+                                 <?php // echo $_GET["external_reference"]; ?>
                                </li>                                                                     
-                            </ul>
+                            </ul> -->
                         </div>
                         <div class="column large-12 small-12">
                            <div class="as-pagination-align">

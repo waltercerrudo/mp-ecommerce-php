@@ -14,6 +14,66 @@
       <link rel="stylesheet" href="./assets/category.css" media="screen, print">
       <link rel="stylesheet" href="./assets/merch-tools.css" media="screen, print">      
       <style>
+         blockquote {
+             font-style: italic;
+            font-weight: 600;
+         }
+      </style>
+      <style>
+         .modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:1;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: auto;
+}
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 65%;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
+      </style>
+      <style>
          .as-filter-button-text {
          font-size: 26px;
          font-weight: 700;
@@ -516,6 +576,31 @@
          </svg>
       </div>
       <div id="ac-gn-viewport-emitter"> </div>
-   </body>
+      <div id="openModal" class="modalDialog">
+      <div>
+         <a href="#close" title="Close" class="close">X</a>
+         <h2>Comentarios</h2>
+         <div>
+            <h4>Producto:</h4>
+            <blockquote>d) URL Imagen: ​Foto del producto seleccionado​. (url v&aacute;lida)</blockquote>
+            <p>Se hicieron varios intentos y pruebas pero no fue posible corroborar el correcto funcionamiento de este punto. Entiendo que la idea es mostrar una imagen del producto en el checkout de Mercadopago.</p>
+            <blockquote>g) N&uacute;mero de orden del pedido (external_reference): ​Deber&aacute;s indicar aqu&iacute; tu Correo electr&oacute;nico, el mismo que usar&aacute;s para rellenar el formulario del examen (elprimero)​</blockquote>
+            <p>Seg&uacute;n la documentaci&oacute;n esa propiedad pertenece a la entidad <a href="https://www.mercadopago.com.ar/developers/es/reference/preferences/_checkout_preferences/post/"> MercadoPago\Preference</a>
+             no a <a href="https://www.mercadopago.com.ar/developers/es/reference/preferences/_checkout_preferences/post/">MercadoPago\Item</a>, por lo que se incluy&oacute; en la preferencia. </p>
+            <h4>P&aacute;ginas de retorno (back_url)</h4>
+            <blockquote>c - El pago haya sido exitoso. En la pantalla se deber&aacute; mostrar la informaci&oacute;n proveniente de los par&aacute;metros que enviamos en el <q>Query String</q> como: <k>payment_method_id</k> que se us&oacute; para pagar, el valor del campo <k>external_reference</k> y el ID de pago (<k>payment_id</k> o <k>collection_id</k>) de MercadoPago.</blockquote>
+            <p>Seg&uacute;n la nota en la p&aacute;gina 4 del documento <a href="./docs/Examen práctico de integración.pdf">Examen pr&aacute;ctico de integraci&oacute;n.pdf</a> ese dato no es provisto en la <k>Query String</k>, en su lugar se informa <k>payment_type</k></p>
+            <h4>Test User (Comprador o Pagador)</h4>
+            <p>Dado que el usuario <k>test_user_63274575@testuser.com</k> ten&iacute;a el password vencido, se agregaron los datos del comprador (payer) pero los pagos se hicieron sin iniciar sesi&oacute;n en MercadoPago</p>          
+         </div>
+      <br />
+   </div>
+</div>
+   </body>   
    <script src="https://www.mercadopago.com/v2/security.js" view="home"></script>
+   <script>
+      $(".close").on('click',function(){
+         $(".modalDialog").css({"opacity":"0","pointer-events":"none"});
+      });
+   </script>
 </html>
